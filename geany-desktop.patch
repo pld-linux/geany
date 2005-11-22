@@ -1,0 +1,22 @@
+diff -urN geany-0.3.orig/geany.desktop geany-0.3/geany.desktop
+--- geany-0.3.orig/geany.desktop	2005-11-22 20:22:54.216824128 +0100
++++ geany-0.3/geany.desktop	2005-11-22 20:34:17.369969064 +0100
+@@ -1,13 +1,14 @@
+-
+ [Desktop Entry]
+ Name=Geany
+-Comment=A fast and lightweight IDE using GTK2
++Comment=A fast and lightweight IDE using GTK+2
+ Comment[de]=Eine kleine und schnelle integrierte Entwicklungsumgebung
++Comment[pl]=Szybkie i lekkie IDE korzystające z GTK+2
+ Exec=geany
+-Icon=geany.png
++Icon=geany
+ Terminal=false
+ Type=Application
+ X-MultipleArgs=false
+-Categories=Application;Development;
++Categories=GTK;Development;IDE;
+ Encoding=UTF-8
+ StartupNotify=true
++# vi: encoding=utf-8
