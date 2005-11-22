@@ -1,4 +1,5 @@
-Summary:	GTK+2 Programmer's Editor
+Summary:	Fast and lightweight IDE using GTK+2
+Summary(pl):	Szybkie i lekkie IDE u¿ywaj±ce GTK+2
 Name:		geany
 Version:	0.3
 Release:	2
@@ -19,8 +20,7 @@ Geany is a small and lightweight integrated development environment.
 It was developed to provide a small and fast IDE, which has only a few
 dependencies from other packages. Another goal was to be as
 independent as possible from a special Desktop Environment like KDE or
-GNOME. So it uses only the GTK+2 toolkit and therefore you need only
-the GTK+2 runtime libraries to run Geany.
+GNOME.
 
 Basic features of Geany
 - syntax highlighting
@@ -31,6 +31,24 @@ Basic features of Geany
 - many supported filetypes like C, Java, PHP, HTML, Python, Perl,
   Pascal
 - symbol lists
+
+%description -l pl
+Geany jest ma³ym i lekkim zintegrowanym ¶rodowiskiem programistycznym.
+Zosta³ napisany z my¶l± o byciu ma³ym i szybkim IDE, z ma³± ilo¶ci±
+zale¿no¶ci od innych pakietów. Kolejnym, przy¶wiecaj±cym tworzeniu go
+celem by³o maksymalne uniezale¿nienie od konkretnego ¶rodowiska
+graficznego jak KDE czy GNOME.
+
+Podstawowe cechy Geany to:
+- pod¶wietlanie sk³adni
+- uzupe³nianie kodu
+- automatyczne uzupe³nianie czêsto u¿ywanych konstrukcji jak if, for
+  i while
+- automatyczne uzupe³nianie tagów XML i HTML
+- wy¶wietlanie podpowiedzi
+- wiele wspieranych typów plików jak C, Java, PHP, Python, Perl,
+  Pascal
+- wykazy symboli
 
 %prep
 %setup -q
