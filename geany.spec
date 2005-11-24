@@ -10,6 +10,8 @@ Source0:	http://geany.uvena.de/files/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-doc_dir.patch
 URL:		http://geany.uvena.de/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	libstdc++-devel
