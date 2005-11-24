@@ -37,7 +37,7 @@ Basic features of Geany
 
 %description -l pl
 Geany jest ma³ym i lekkim zintegrowanym ¶rodowiskiem programistycznym.
-Zosta³ napisany z my¶l± o byciu ma³ym i szybkim IDE, z ma³± ilo¶ci±
+Zosta³ napisany z my¶l± o byciu ma³ym i szybkim IDE, z ma³± liczb±
 zale¿no¶ci od innych pakietów. Kolejnym, przy¶wiecaj±cym tworzeniu go
 celem by³o maksymalne uniezale¿nienie od konkretnego ¶rodowiska
 graficznego jak KDE czy GNOME.
@@ -47,7 +47,7 @@ Podstawowe cechy Geany to:
 - uzupe³nianie kodu
 - automatyczne uzupe³nianie czêsto u¿ywanych konstrukcji jak if, for
   i while
-- automatyczne uzupe³nianie tagów XML i HTML
+- automatyczne uzupe³nianie znaczników XML i HTML
 - wy¶wietlanie podpowiedzi
 - wiele wspieranych typów plików jak C, Java, PHP, Python, Perl,
   Pascal
