@@ -1,22 +1,22 @@
-diff -urN geany-0.3.orig/geany.desktop geany-0.3/geany.desktop
---- geany-0.3.orig/geany.desktop	2005-11-22 20:22:54.216824128 +0100
-+++ geany-0.3/geany.desktop	2005-11-22 20:34:17.369969064 +0100
-@@ -1,13 +1,14 @@
--
- [Desktop Entry]
+diff -aurN geany-0.5.orig/geany.desktop.in geany-0.5/geany.desktop.in
+--- geany-0.5.orig/geany.desktop.in	2006-01-16 17:39:19.000000000 +0100
++++ geany-0.5/geany.desktop.in	2006-02-02 15:53:35.144276000 +0100
+@@ -3,14 +3,14 @@
  Name=Geany
+ GenericName=Integrated Development Environment
+ GenericName[de]=Integrierte Entwicklungsumgebung
 -Comment=A fast and lightweight IDE using GTK2
-+Comment=A fast and lightweight IDE using GTK+2
++Comment=A fast and lightweight IDE using GTK+
  Comment[de]=Eine kleine und schnelle integrierte Entwicklungsumgebung
-+Comment[pl]=Szybkie i lekkie IDE korzystające z GTK+2
- Exec=geany
--Icon=geany.png
+-Comment[pl]=Szybkie i lekkie IDE korzystające z GTK+2
++Comment[pl]=Szybkie i lekkie IDE korzystające z GTK+
+ Exec=geany %F
+-Icon=@GEANY_PIXMAPS_DIR@/geany.png
 +Icon=geany
  Terminal=false
  Type=Application
- X-MultipleArgs=false
--Categories=Application;Development;
+-Categories=Application;GTK;Development;IDE;
 +Categories=GTK;Development;IDE;
  Encoding=UTF-8
- StartupNotify=true
-+# vi: encoding=utf-8
+ # currently false, changes perhabs in the future
+ StartupNotify=false
