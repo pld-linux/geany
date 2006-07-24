@@ -1,0 +1,22 @@
+diff -aurN geany.orig/doc/Makefile.am geany/doc/Makefile.am
+--- geany.orig/doc/Makefile.am	2005-12-11 19:06:07.000000000 +0100
++++ geany/doc/Makefile.am	2005-12-21 17:45:14.000000000 +0100
+@@ -1,5 +1,5 @@
+ 
+-DOCDIR = $(DESTDIR)/$(datadir)/doc/@PACKAGE@
++DOCDIR = $(DESTDIR)/$(datadir)/@PACKAGE@/doc
+ HTML_FILES = html/*.html geany.css
+ IMAGE_FILES = images/*.jpg
+ EXTRA_DIST = geany.css make_webable.sh geany.txt geany_gpl.docbook geany.1 geany.docbook $(HTML_FILES) $(IMAGE_FILES)
+diff -aurN geany.orig/src/geany.h geany/src/geany.h
+--- geany.orig/src/geany.h	2005-12-18 23:38:44.000000000 +0100
++++ geany/src/geany.h	2005-12-21 17:46:05.000000000 +0100
+@@ -67,7 +67,7 @@
+ 
+ 
+ #ifndef DOCDIR
+-# define DOCDIR PACKAGE_DATA_DIR"/doc/"PACKAGE"/html/"
++# define DOCDIR PACKAGE_DATA_DIR"/"PACKAGE"/doc/html/index.html"
+ #endif
+ 
+ 
