@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	vte-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		no_build_with_as_needed	1
+%define		filterout_ld	(-Wl,)?--as-needed
 
 %description
 Geany is a small and lightweight integrated development environment.
