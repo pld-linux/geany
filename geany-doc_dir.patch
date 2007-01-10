@@ -30,6 +30,6 @@ diff -aurN geany-0.8.orig/src/main.c geany-0.8/src/main.c
  	data_dir = g_strdup(PACKAGE_DATA_DIR "/" PACKAGE "/"); // e.g. /usr/share/geany
 -	doc_dir = g_strdup(PACKAGE_DATA_DIR "/doc/" PACKAGE "/html/");
 +	doc_dir = g_strdup(PACKAGE_DATA_DIR "/" PACKAGE "/doc/html/");
- 	locale_dir = g_strdup(PACKAGE_LOCALE_DIR);
  #endif
+ 
  

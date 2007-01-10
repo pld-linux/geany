@@ -1,15 +1,14 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl):	Szybkie i lekkie IDE u¿ywaj±ce GTK+2
 Name:		geany
-Version:	0.8
-Release:	2
+Version:	0.10
+Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/geany/%{name}-%{version}.tar.bz2
-# Source0-md5:	adffe7b71983f897eec449d50312f2c8
+# Source0-md5:	2ffaae9b0fa807bdd4be0e6ec0f4a2e5
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-doc_dir.patch
-Patch2:		%{name}-ldadd.patch
 URL:		http://geany.uvena.de/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -59,7 +58,6 @@ Podstawowe cechy Geany to:
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__glib_gettextize}
@@ -76,6 +74,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -f $RPM_BUILD_ROOT/%{_pixmapsdir}/%{name}.ico
+
 %find_lang %{name}
 
 %clean
@@ -84,8 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README THANKS TODO scintilla/License.txt
-%attr(755,root,root) %{_bindir}/geany
-%{_desktopdir}/geany.desktop
+%attr(755,root,root) %{_bindir}/%{name}
+%{_desktopdir}/%{name}.desktop
 %{_datadir}/%{name}
-%{_pixmapsdir}/geany.png
-%{_mandir}/man1/geany.1*
+%{_pixmapsdir}/%{name}.png
+%{_mandir}/man1/%{name}.1*
