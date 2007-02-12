@@ -1,5 +1,5 @@
 Summary:	Fast and lightweight IDE using GTK+2
-Summary(pl):	Szybkie i lekkie IDE uøywaj±ce GTK+2
+Summary(pl.UTF-8):   Szybkie i lekkie IDE u≈ºywajƒÖce GTK+2
 Name:		geany
 Version:	0.10
 Release:	1
@@ -36,21 +36,21 @@ Basic features of Geany
   Pascal
 - symbol lists
 
-%description -l pl
-Geany jest ma≥ym i lekkim zintegrowanym ∂rodowiskiem programistycznym.
-Zosta≥ napisany z my∂l± o byciu ma≥ym i szybkim IDE, z ma≥± liczb±
-zaleøno∂ci od innych pakietÛw. Kolejnym, przy∂wiecaj±cym tworzeniu go
-celem by≥o maksymalne uniezaleønienie od konkretnego ∂rodowiska
+%description -l pl.UTF-8
+Geany jest ma≈Çym i lekkim zintegrowanym ≈õrodowiskiem programistycznym.
+Zosta≈Ç napisany z my≈õlƒÖ o byciu ma≈Çym i szybkim IDE, z ma≈ÇƒÖ liczbƒÖ
+zale≈ºno≈õci od innych pakiet√≥w. Kolejnym, przy≈õwiecajƒÖcym tworzeniu go
+celem by≈Ço maksymalne uniezale≈ºnienie od konkretnego ≈õrodowiska
 graficznego jak KDE czy GNOME.
 
 Podstawowe cechy Geany to:
-- pod∂wietlanie sk≥adni
-- uzupe≥nianie kodu
-- automatyczne uzupe≥nianie czÍsto uøywanych konstrukcji jak if, for
+- pod≈õwietlanie sk≈Çadni
+- uzupe≈Çnianie kodu
+- automatyczne uzupe≈Çnianie czƒôsto u≈ºywanych konstrukcji jak if, for
   i while
-- automatyczne uzupe≥nianie znacznikÛw XML i HTML
-- wy∂wietlanie podpowiedzi
-- wiele wspieranych typÛw plikÛw jak C, Java, PHP, Python, Perl,
+- automatyczne uzupe≈Çnianie znacznik√≥w XML i HTML
+- wy≈õwietlanie podpowiedzi
+- wiele wspieranych typ√≥w plik√≥w jak C, Java, PHP, Python, Perl,
   Pascal
 - wykazy symboli
 
