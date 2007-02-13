@@ -1,5 +1,5 @@
 Summary:	Fast and lightweight IDE using GTK+2
-Summary(pl.UTF-8):   Szybkie i lekkie IDE używające GTK+2
+Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
 Version:	0.10
 Release:	1
