@@ -5,21 +5,22 @@ diff -aurN geany-0.8.orig/doc/Makefile.am geany-0.8/doc/Makefile.am
  man_MANS=geany.1
 -DOCDIR = $(DESTDIR)/$(datadir)/doc/@PACKAGE@
 +DOCDIR = $(DESTDIR)/$(datadir)/@PACKAGE@/doc
- HTML_FILES = html/*.html geany.css
- IMAGE_FILES = images/*.jpg
+ HTML_FILES = html/*.html
+ IMAGE_FILES = images/*.png
  EXTRA_DIST = geany.css geany.xsl make_webable.sh geany.txt geany_gpl.docbook geany.1 \
-@@ -45,12 +45,3 @@
- 	    $(INSTALL_DATA) $(srcdir)/$$file $(DOCDIR)/html/images/$$basefile; \
+@@ -45,13 +45,3 @@
+ 	    $(INSTALL_DATA) $$file $(DOCDIR)/html/images/$$basefile; \
  	  fi \
  	done
--	$(INSTALL_DATA) geany.txt $(DOCDIR)/manual.txt
--	$(INSTALL_DATA) ../README $(DOCDIR)
--	$(INSTALL_DATA) ../ChangeLog $(DOCDIR)
--	$(INSTALL_DATA) ../NEWS $(DOCDIR)
--	$(INSTALL_DATA) ../COPYING $(DOCDIR)
--	$(INSTALL_DATA) ../AUTHORS $(DOCDIR)
--	$(INSTALL_DATA) ../TODO $(DOCDIR)
--	$(INSTALL_DATA) ../scintilla/License.txt $(DOCDIR)/ScintillaLicense.txt
+-	$(INSTALL_DATA) $(srcdir)/geany.css $(DOCDIR)/html/geany.css
+-	$(INSTALL_DATA) $(srcdir)/geany.txt $(DOCDIR)/manual.txt
+-	$(INSTALL_DATA) $(top_srcdir)/README $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/ChangeLog $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/NEWS $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/COPYING $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/AUTHORS $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/TODO $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/scintilla/License.txt $(DOCDIR)/ScintillaLicense.txt
 -
 diff -aurN geany-0.8.orig/src/main.c geany-0.8/src/main.c
 --- geany-0.8.orig/src/main.c	2006-08-09 13:06:51.000000000 +0200
