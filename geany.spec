@@ -1,12 +1,12 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	0.11
+Version:	0.12
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/geany/%{name}-%{version}.tar.bz2
-# Source0-md5:	1a0a679f4107d8c584d4e173d400f87c
+# Source0-md5:	bfb6dd5e833f2852935f93218a09de93
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-doc_dir.patch
 URL:		http://geany.uvena.de/
@@ -54,6 +54,41 @@ Podstawowe cechy Geany to:
   Pascal
 - wykazy symboli
 
+%package plugin-classbuilder
+Summary:	Plugin for class maintenance in geany
+Summary(pl.UTF-8):	Wtyczka do zarządzenia klasami w geany
+Group:		Libraries
+
+%description plugin-classbuilder
+Plugin that allows maintenance of classes within geany
+
+%description plugin-classbuilder -l pl.UTF-8 
+Wtyczka pozwalająca na zarządzanie klasami w geany
+
+%package plugin-export
+Summary:	Plugin for exporting projects from geany
+Summary(pl.UTF-8):	Wtyczka do eksportowania projektów z geany
+Group:		Libraries
+
+%description plugin-export
+Plugin that allows exporting projects from geany into various formats
+(html and latex by now)
+
+%description plugin-export -l pl.UTF-8
+Wtyczka służąca do eksportowania projektów z geany do różnych formatów
+(aktualnie html i latex)
+
+%package plugin-htmlchars
+Summary:	Plugin for enhanced HTML editing in geany
+Summary(pl.UTF-8):	Wtyczka z rozszerzeniami do edycji HTML w geany
+Group:		Libraries
+
+%description plugin-htmlchars
+Plugin containing a library of special HTML tags.
+
+%description plugin-htmlchars -l pl.UTF-8
+Wtyczka zawierająca bibliotekę znaków specjalnych HTML
+
 %prep
 %setup -q
 %patch0 -p1
@@ -89,3 +124,21 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_pixmapsdir}/%{name}.png
 %{_mandir}/man1/%{name}.1*
+%dir %{_libdir}/%{name}
+
+%files plugin-classbuilder
+%{_libdir}/%{name}/classbuilder.so
+%{_iconsdir}/hicolor/16x16/apps/classviewer-class.png
+%{_iconsdir}/hicolor/16x16/apps/classviewer-macro.png
+%{_iconsdir}/hicolor/16x16/apps/classviewer-member.png
+%{_iconsdir}/hicolor/16x16/apps/classviewer-method.png
+%{_iconsdir}/hicolor/16x16/apps/classviewer-namespace.png
+%{_iconsdir}/hicolor/16x16/apps/classviewer-other.png
+%{_iconsdir}/hicolor/16x16/apps/classviewer-struct.png
+%{_iconsdir}/hicolor/16x16/apps/classviewer-var.png
+
+%files plugin-export
+%{_libdir}/%{name}/export.so
+
+%files plugin-htmlchars
+%{_libdir}/%{name}/htmlchars.so
