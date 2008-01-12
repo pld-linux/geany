@@ -60,10 +60,10 @@ Summary(pl.UTF-8):	Wtyczka do zarządzenia klasami w geany
 Group:		Libraries
 
 %description plugin-classbuilder
-Plugin that allows maintenance of classes within geany
+Plugin that allows maintenance of classes within geany.
 
 %description plugin-classbuilder -l pl.UTF-8 
-Wtyczka pozwalająca na zarządzanie klasami w geany
+Wtyczka pozwalająca na zarządzanie klasami w geany.
 
 %package plugin-export
 Summary:	Plugin for exporting projects from geany
@@ -72,11 +72,11 @@ Group:		Libraries
 
 %description plugin-export
 Plugin that allows exporting projects from geany into various formats
-(html and latex by now)
+(HTML and LaTeX by now).
 
 %description plugin-export -l pl.UTF-8
 Wtyczka służąca do eksportowania projektów z geany do różnych formatów
-(aktualnie html i latex)
+(aktualnie HTML i LaTeX).
 
 %package plugin-htmlchars
 Summary:	Plugin for enhanced HTML editing in geany
@@ -87,7 +87,7 @@ Group:		Libraries
 Plugin containing a library of special HTML tags.
 
 %description plugin-htmlchars -l pl.UTF-8
-Wtyczka zawierająca bibliotekę znaków specjalnych HTML
+Wtyczka zawierająca bibliotekę znaczników specjalnych HTML.
 
 %prep
 %setup -q
@@ -127,7 +127,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/%{name}
 
 %files plugin-classbuilder
-%{_libdir}/%{name}/classbuilder.so
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/classbuilder.so
 %{_iconsdir}/hicolor/16x16/apps/classviewer-class.png
 %{_iconsdir}/hicolor/16x16/apps/classviewer-macro.png
 %{_iconsdir}/hicolor/16x16/apps/classviewer-member.png
@@ -138,7 +139,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/16x16/apps/classviewer-var.png
 
 %files plugin-export
-%{_libdir}/%{name}/export.so
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/export.so
 
 %files plugin-htmlchars
-%{_libdir}/%{name}/htmlchars.so
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/htmlchars.so
