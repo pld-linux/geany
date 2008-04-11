@@ -1,12 +1,12 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	0.12
+Version:	0.13
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/geany/%{name}-%{version}.tar.bz2
-# Source0-md5:	bfb6dd5e833f2852935f93218a09de93
+# Source0-md5:	0dc4f30b5ee9132f136fd3e7e4f02e0c
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-doc_dir.patch
 URL:		http://geany.uvena.de/
@@ -89,6 +89,46 @@ Plugin containing a library of special HTML tags.
 %description plugin-htmlchars -l pl.UTF-8
 Wtyczka zawierająca bibliotekę znaczników specjalnych HTML.
 
+%package plugin-filebrowser
+Summary:	Sidebar File Browser plugin
+Summary(pl.UTF-8):	Panel boczny do przeglądania systemu plików
+Group:		Libraries
+
+%description plugin-filebrowser
+Sidebar File Browser.
+
+%description plugin-filebrowser -l pl.UTF-8
+Przeglądarka plików w panelu bocznym.
+
+%package plugin-autosave
+Summary:	Auto Save plugin
+Summary(pl.UTF-8):	Wtyczka do auto zapisu
+Group:		Libraries
+
+%description plugin-autosave
+Plugin for automatically saving changes.
+
+%description plugin-autosave -l pl.UTF-8
+Wtyczka do automatycznego zapisywania zmian.
+
+%package plugin-vcdiff
+Summary:	Version Control Diff plugin
+Summary(pl.UTF-8):	Wtyczka Version Control Diff	
+Group:		Libraries
+
+%description plugin-vcdiff
+Plugin form getting diffs over Version Control system, supports:
+- svn
+- cvs
+- git
+
+%description plugin-vcdiff -l pl.UTF-8
+Wtyczka do porównywania zmian względem systemu kontroli wersji.
+Aktualnie wspierane są:
+- svn
+- cvs
+- git
+
 %prep
 %setup -q
 %patch0 -p1
@@ -145,3 +185,15 @@ rm -rf $RPM_BUILD_ROOT
 %files plugin-htmlchars
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/htmlchars.so
+
+%files plugin-autosave
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/autosave.so
+
+%files plugin-vcdiff
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/vcdiff.so
+
+%files plugin-filebrowser
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/filebrowser.so
