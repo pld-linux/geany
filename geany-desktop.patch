@@ -1,7 +1,7 @@
 diff -aurN geany-0.5.orig/geany.desktop.in geany-0.5/geany.desktop.in
 --- geany-0.5.orig/geany.desktop.in.in	2006-01-16 17:39:19.000000000 +0100
 +++ geany-0.5/geany.desktop.in.in	2006-02-02 15:53:35.144276000 +0100
-@@ -3,10 +3,12 @@
+@@ -3,5 +3,7 @@
  _Name=Geany
  _GenericName=Integrated Development Environment
 -_Comment=A fast and lightweight IDE using GTK2
@@ -9,11 +9,4 @@ diff -aurN geany-0.5.orig/geany.desktop.in geany-0.5/geany.desktop.in
 +GenericName[pl]=Zintegrowane środowisko programistyczne (IDE)
 +Comment[pl]=Szybkie i lekkie IDE używające GTK+2
  Exec=geany %F
--Icon=@GEANY_PIXMAPS_DIR@/geany.png
-+Icon=geany
- Terminal=false
- Type=Application
--Categories=Application;GTK;Development;IDE;
-+Categories=GTK;Development;IDE;
- Encoding=UTF-8
- MimeType=text/plain;text/x-chdr;text/x-csrc;text/x-c++hdr;text/x-c++src;text/x-java;text/x-dsrc;text/x-pascal;text/x-perl;text/x-python;application/x-php;application/x-httpd-php*;application/xml;text/html;text/css;text/x-sql;text/x-diff;
+ Icon=geany
