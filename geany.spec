@@ -1,14 +1,13 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	0.13
+Version:	0.14
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/geany/%{name}-%{version}.tar.bz2
-# Source0-md5:	0dc4f30b5ee9132f136fd3e7e4f02e0c
+# Source0-md5:	c6c22c7f9feff81a15f5c8ece03b87c1
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-doc_dir.patch
 URL:		http://geany.uvena.de/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -132,7 +131,6 @@ Aktualnie wspierane są:
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__glib_gettextize}
@@ -140,7 +138,8 @@ Aktualnie wspierane są:
 %{__autoheader}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--docdir=%{_defaultdocdir}/%{name}-%{version}
 %{__make}
 
 %install
@@ -152,19 +151,20 @@ rm -rf $RPM_BUILD_ROOT
 rm -f $RPM_BUILD_ROOT/%{_pixmapsdir}/%{name}.ico
 
 %find_lang %{name}
+%{!?_noautocompressdoc:find $RPM_BUILD_ROOT%{_defaultdocdir}/%{name}-%{version} -not -name '*.html' -not -name '*.png' -exec gzip '{}' ';'}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README THANKS TODO scintilla/License.txt
 %attr(755,root,root) %{_bindir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_datadir}/%{name}
 %{_pixmapsdir}/%{name}.png
 %{_mandir}/man1/%{name}.1*
 %dir %{_libdir}/%{name}
+%doc %{_defaultdocdir}/%{name}-%{version}
 
 %files plugin-classbuilder
 %defattr(644,root,root,755)
