@@ -2,7 +2,7 @@ Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
 Version:	0.14
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/geany/%{name}-%{version}.tar.bz2
@@ -14,6 +14,7 @@ BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	vte-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -53,6 +54,18 @@ Podstawowe cechy Geany to:
   Pascal
 - wykazy symboli
 
+%package devel
+Summary:	Header files for geany
+Summary(pl.UTF-8):	Pliki nagłówkowe dla geany
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description devel
+Header files for geany.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe dla geany.
+
 %package plugin-classbuilder
 Summary:	Plugin for class maintenance in geany
 Summary(pl.UTF-8):	Wtyczka do zarządzenia klasami w geany
@@ -61,7 +74,7 @@ Group:		Libraries
 %description plugin-classbuilder
 Plugin that allows maintenance of classes within geany.
 
-%description plugin-classbuilder -l pl.UTF-8 
+%description plugin-classbuilder -l pl.UTF-8
 Wtyczka pozwalająca na zarządzanie klasami w geany.
 
 %package plugin-export
@@ -112,7 +125,7 @@ Wtyczka do automatycznego zapisywania zmian.
 
 %package plugin-vcdiff
 Summary:	Version Control Diff plugin
-Summary(pl.UTF-8):	Wtyczka Version Control Diff	
+Summary(pl.UTF-8):	Wtyczka Version Control Diff
 Group:		Libraries
 
 %description plugin-vcdiff
@@ -134,6 +147,7 @@ Aktualnie wspierane są:
 
 %build
 %{__glib_gettextize}
+%{__libtoolize}
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
@@ -164,7 +178,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/%{name}.png
 %{_mandir}/man1/%{name}.1*
 %dir %{_libdir}/%{name}
-%doc %{_defaultdocdir}/%{name}-%{version}
+%doc %{_docdir}/%{name}-%{version}
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/%{name}
+%{_libdir}/%{name}/*.la
+%{_pkgconfigdir}/*.pc
 
 %files plugin-classbuilder
 %defattr(644,root,root,755)
