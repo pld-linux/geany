@@ -1,7 +1,8 @@
-diff -aurN geany-0.5.orig/geany.desktop.in geany-0.5/geany.desktop.in
---- geany-0.5.orig/geany.desktop.in.in	2006-01-16 17:39:19.000000000 +0100
-+++ geany-0.5/geany.desktop.in.in	2006-02-02 15:53:35.144276000 +0100
-@@ -3,5 +3,7 @@
+diff -burNp geany-0.17/geany.desktop.in geany-0.17-dud/geany.desktop.in
+--- geany-0.17/geany.desktop.in	2008-06-06 16:27:08.000000000 +0200
++++ geany-0.17-dud/geany.desktop.in	2009-05-08 06:39:51.877253539 +0200
+@@ -3,7 +3,9 @@ Type=Application
+ Version=1.0
  _Name=Geany
  _GenericName=Integrated Development Environment
 -_Comment=A fast and lightweight IDE using GTK2
@@ -10,3 +11,4 @@ diff -aurN geany-0.5.orig/geany.desktop.in geany-0.5/geany.desktop.in
 +Comment[pl]=Szybkie i lekkie IDE używające GTK+2
  Exec=geany %F
  Icon=geany
+ Terminal=false
