@@ -13,11 +13,13 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	intltool
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	vte-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	geany-plugin-vcdiff
 
 %description
 Geany is a small and lightweight integrated development environment.
@@ -116,6 +118,8 @@ Przeglądarka plików w panelu bocznym.
 Summary:	Provides different actions related to saving files
 Summary(pl.UTF-8):	Wtyczka do automatycznego zapisu plików
 Group:		Libraries
+Provides:	geany-plugin-autosave
+Obsoletes:	geany-plugin-autosave
 
 %description plugin-saveactions
 Provides different actions related to saving files (autosave,
