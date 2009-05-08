@@ -1,12 +1,12 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	0.14
-Release:	2
+Version:	0.17
+Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/geany/%{name}-%{version}.tar.bz2
-# Source0-md5:	c6c22c7f9feff81a15f5c8ece03b87c1
+# Source0-md5:	097f619f5f0800098a2438a216a28e7b
 Patch0:		%{name}-desktop.patch
 URL:		http://geany.uvena.de/
 BuildRequires:	autoconf
@@ -112,41 +112,36 @@ Sidebar File Browser.
 %description plugin-filebrowser -l pl.UTF-8
 Przeglądarka plików w panelu bocznym.
 
-%package plugin-autosave
-Summary:	Auto Save plugin
-Summary(pl.UTF-8):	Wtyczka do auto zapisu
+%package plugin-saveactions
+Summary:	Provides different actions related to saving files
+Summary(pl.UTF-8):	Wtyczka do automatycznego zapisu plików
 Group:		Libraries
 
-%description plugin-autosave
-Plugin for automatically saving changes.
+%description plugin-saveactions
+Provides different actions related to saving files (autosave,
+instantsave, backupcopy).
 
-%description plugin-autosave -l pl.UTF-8
-Wtyczka do automatycznego zapisywania zmian.
+%description plugin-saveactions -l pl.UTF-8
+Wtyczka umożliwiająca wybór rodzaju zapisu pliku (autozapis, zapis
+ciągły, kopia zapasowa).
 
-%package plugin-vcdiff
-Summary:	Version Control Diff plugin
-Summary(pl.UTF-8):	Wtyczka Version Control Diff
+%package plugin-splitwindow
+Summary:	Splits the editor view into two windows
+Summary(pl.UTF-8):	Wtyczka dzieląca okno na dwie części
 Group:		Libraries
 
-%description plugin-vcdiff
-Plugin form getting diffs over Version Control system, supports:
-- svn
-- cvs
-- git
+%description plugin-splitwindow
+Splits the editor view into two windows.
 
-%description plugin-vcdiff -l pl.UTF-8
-Wtyczka do porównywania zmian względem systemu kontroli wersji.
-Aktualnie wspierane są:
-- svn
-- cvs
-- git
+%description plugin-splitwindow -l pl.UTF-8
+Wtyczka dzieląca okno na dwie części.
 
 %prep
 %setup -q
 %patch0 -p1
 
 %build
-%{__glib_gettextize}
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
@@ -206,13 +201,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/htmlchars.so
 
-%files plugin-autosave
+%files plugin-saveactions
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}/autosave.so
+%attr(755,root,root) %{_libdir}/%{name}/saveactions.so
 
-%files plugin-vcdiff
+%files plugin-splitwindow
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}/vcdiff.so
+%attr(755,root,root) %{_libdir}/%{name}/splitwindow.so
 
 %files plugin-filebrowser
 %defattr(644,root,root,755)
