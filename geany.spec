@@ -1,14 +1,14 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	0.17
+Version:	0.18
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
-Source0:	http://dl.sourceforge.net/geany/%{name}-%{version}.tar.bz2
-# Source0-md5:	097f619f5f0800098a2438a216a28e7b
+Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
+# Source0-md5:	d8e301f6933c828e2c36b3afdb3f4c34
 Patch0:		%{name}-desktop.patch
-URL:		http://geany.uvena.de/
+URL:		http://geany.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -18,8 +18,8 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	vte-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	geany-plugin-vcdiff
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Geany is a small and lightweight integrated development environment.
@@ -48,8 +48,8 @@ graficznego jak KDE czy GNOME.
 Podstawowe cechy Geany to:
 - podświetlanie składni
 - uzupełnianie kodu
-- automatyczne uzupełnianie często używanych konstrukcji jak if, for
-  i while
+- automatyczne uzupełnianie często używanych konstrukcji jak if, fi
+  while
 - automatyczne uzupełnianie znaczników XML i HTML
 - wyświetlanie podpowiedzi
 - wiele wspieranych typów plików jak C, Java, PHP, Python, Perl,
@@ -152,7 +152,7 @@ Wtyczka dzieląca okno na dwie części.
 %{__autoconf}
 %{__automake}
 %configure \
-	--docdir=%{_defaultdocdir}/%{name}-%{version}
+	--docdir=%{_docdir}/%{name}-%{version}
 %{__make}
 
 %install
@@ -164,7 +164,7 @@ rm -rf $RPM_BUILD_ROOT
 rm -f $RPM_BUILD_ROOT/%{_pixmapsdir}/%{name}.ico
 
 %find_lang %{name}
-%{!?_noautocompressdoc:find $RPM_BUILD_ROOT%{_defaultdocdir}/%{name}-%{version} -not -name '*.html' -not -name '*.png' -exec gzip '{}' ';'}
+%{!?_noautocompressdoc:find $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} -not -name '*.html' -not -name '*.png' -exec gzip '{}' ';'}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -174,7 +174,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_datadir}/%{name}
-%{_pixmapsdir}/%{name}.png
+#%{_pixmapsdir}/%{name}.png
+%{_iconsdir}/hicolor/16x16/apps/geany.png
+%{_iconsdir}/hicolor/48x48/apps/geany.png
+%{_iconsdir}/hicolor/scalable/apps/geany.svg
 %{_mandir}/man1/%{name}.1*
 %dir %{_libdir}/%{name}
 %doc %{_docdir}/%{name}-%{version}
