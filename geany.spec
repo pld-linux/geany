@@ -18,6 +18,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	vte-devel
+BuildRequires:	which
 Obsoletes:	geany-plugin-vcdiff
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
