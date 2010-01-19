@@ -8,7 +8,7 @@ Group:		Development/Tools
 Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
 # Source0-md5:	d8e301f6933c828e2c36b3afdb3f4c34
 Patch0:		%{name}-desktop.patch
-URL:		http://geany.org/
+URL:		http://www.geany.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -162,10 +162,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT/%{_pixmapsdir}/%{name}.ico
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.ico
 
 # fix locales
-rm -rf $RPM_BUILD_ROOT/%{_datadir}/locale/lb
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/lb
 mv $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
 
 %find_lang %{name}
