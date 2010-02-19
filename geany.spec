@@ -14,12 +14,9 @@ BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	intltool
-BuildRequires:	libpng12-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	vte-devel
-BuildRequires:	which
 Obsoletes:	geany-plugin-vcdiff
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
