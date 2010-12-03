@@ -1,12 +1,12 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	0.19.1
-Release:	2
+Version:	0.19.2
+Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	5ed9623081ce2a23b9a3425b0486bba3
+# Source0-md5:	fd12c814606659eefdf67d070f2638a6
 Patch0:		%{name}-desktop.patch
 URL:		http://www.geany.org/
 BuildRequires:	autoconf
