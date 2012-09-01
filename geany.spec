@@ -1,23 +1,21 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	0.21
-Release:	3
+Version:	1.22
+Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	117d78ae5275c8c517686b6db9d71ef1
+# Source0-md5:	0672077fe83e2a739aa0eaca426aacf0
 Patch0:		%{name}-desktop.patch
 URL:		http://www.geany.org/
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.16.0
-BuildRequires:	gtk+2-devel >= 2:2.12.0
+BuildRequires:	glib2-devel >= 1:2.20.0
+BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	intltool
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	which
 Obsoletes:	geany-plugin-vcdiff
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -145,13 +143,6 @@ Wtyczka dzieląca okno na dwie części.
 %patch0 -p1
 
 %build
-mkdir m4
-%{__intltoolize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
 %configure \
 	--disable-silent-rules \
 	--docdir=%{_docdir}/%{name}-%{version}
