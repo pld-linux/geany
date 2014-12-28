@@ -9,7 +9,7 @@ Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
 # Source0-md5:	86b911f2da3735d5cdc6ccf589b8e856
 Patch0:		%{name}-desktop.patch
 URL:		http://www.geany.org/
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.20.0
 BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	intltool
