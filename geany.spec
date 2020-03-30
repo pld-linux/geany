@@ -1,13 +1,12 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	1.23.1
-Release:	4
+Version:	1.36
+Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	86b911f2da3735d5cdc6ccf589b8e856
-Patch0:		%{name}-desktop.patch
+# Source0-md5:	53216a43345e2b6dbefa02ac24885753
 URL:		http://www.geany.org/
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.20.0
@@ -140,7 +139,6 @@ Wtyczka dzieląca okno na dwie części.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure \
@@ -154,10 +152,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.ico
+%{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/Tango
 
 # fix locales
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/lb
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/lb
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}{/%{name},}/*.la
 
 %find_lang %{name}
 %{!?_noautocompressdoc:find $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} -not -name '*.html' -not -name '*.png' -exec gzip '{}' ';'}
@@ -170,7 +170,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_datadir}/%{name}
-#%{_pixmapsdir}/%{name}.png
+%attr(755,root,root) %{_libdir}/libgeany.so.*.*.*
+%ghost %attr(755,root,root) %{_libdir}/libgeany.so.0
 %{_iconsdir}/hicolor/*x*/apps/geany.png
 %{_iconsdir}/hicolor/*x*/actions/geany*.png
 %{_iconsdir}/hicolor/scalable/apps/geany.svg
@@ -183,7 +184,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/%{name}
-%{_libdir}/%{name}/*.la
+%ghost %attr(755,root,root) %{_libdir}/libgeany.so
 %{_pkgconfigdir}/*.pc
 
 %files plugin-classbuilder
