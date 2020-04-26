@@ -2,7 +2,7 @@ Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
 Version:	1.36
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
@@ -184,7 +184,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/%{name}
-%ghost %attr(755,root,root) %{_libdir}/libgeany.so
+%attr(755,root,root) %{_libdir}/libgeany.so
 %{_pkgconfigdir}/*.pc
 
 %files plugin-classbuilder
