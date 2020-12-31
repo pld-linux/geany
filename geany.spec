@@ -1,16 +1,16 @@
 Summary:	Fast and lightweight IDE using GTK+2
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+2
 Name:		geany
-Version:	1.36
-Release:	2
+Version:	1.37
+Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	53216a43345e2b6dbefa02ac24885753
+# Source0-md5:	cf9c2d550cf2fa895580e68b7c40af19
 URL:		http://www.geany.org/
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.20.0
-BuildRequires:	gtk+2-devel >= 2:2.16.0
+BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	intltool
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
@@ -155,7 +155,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/Tango
 
 # fix locales
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/lb
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{ie,lb}
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}{/%{name},}/*.la
 
