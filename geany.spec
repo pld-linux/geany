@@ -143,6 +143,7 @@ Wtyczka dzieląca okno na dwie części.
 %build
 %configure \
 	--disable-silent-rules \
+	--disable-gtkdoc-header \
 	--docdir=%{_docdir}/%{name}-%{version}
 %{__make}
 
