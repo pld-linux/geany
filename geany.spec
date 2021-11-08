@@ -5,7 +5,7 @@ Version:	1.38
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
-Source0:	http://download.geany.org/%{name}-%{version}.tar.bz2
+Source0:	https://download.geany.org/%{name}-%{version}.tar.bz2
 # Source0-md5:	47b7b89d58ed5bbef6ff8d517ed01efd
 URL:		http://www.geany.org/
 BuildRequires:	gettext-tools
