@@ -14,8 +14,9 @@ BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	intltool
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
+BuildRequires:	python3-rst2pdf
 BuildRequires:	which
-Obsoletes:	geany-plugin-vcdiff
+Obsoletes:	geany-plugin-vcdiff < 0.17
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -69,6 +70,7 @@ Pliki nagłówkowe dla geany.
 Summary:	Plugin for class maintenance in geany
 Summary(pl.UTF-8):	Wtyczka do zarządzenia klasami w geany
 Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-classbuilder
 Plugin that allows maintenance of classes within geany.
@@ -80,6 +82,7 @@ Wtyczka pozwalająca na zarządzanie klasami w geany.
 Summary:	Plugin for exporting projects from geany
 Summary(pl.UTF-8):	Wtyczka do eksportowania projektów z geany
 Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-export
 Plugin that allows exporting projects from geany into various formats
@@ -93,6 +96,7 @@ Wtyczka służąca do eksportowania projektów z geany do różnych formatów
 Summary:	Plugin for enhanced HTML editing in geany
 Summary(pl.UTF-8):	Wtyczka z rozszerzeniami do edycji HTML w geany
 Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-htmlchars
 Plugin containing a library of special HTML tags.
@@ -104,6 +108,7 @@ Wtyczka zawierająca bibliotekę znaczników specjalnych HTML.
 Summary:	Sidebar File Browser plugin
 Summary(pl.UTF-8):	Panel boczny do przeglądania systemu plików
 Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-filebrowser
 Sidebar File Browser.
@@ -115,8 +120,9 @@ Przeglądarka plików w panelu bocznym.
 Summary:	Provides different actions related to saving files
 Summary(pl.UTF-8):	Wtyczka do automatycznego zapisu plików
 Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
 Provides:	geany-plugin-autosave
-Obsoletes:	geany-plugin-autosave
+Obsoletes:	geany-plugin-autosave < 0.17
 
 %description plugin-saveactions
 Provides different actions related to saving files (autosave,
@@ -130,6 +136,7 @@ ciągły, kopia zapasowa).
 Summary:	Splits the editor view into two windows
 Summary(pl.UTF-8):	Wtyczka dzieląca okno na dwie części
 Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-splitwindow
 Splits the editor view into two windows.
@@ -171,25 +178,24 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/%{name}
-%{_desktopdir}/%{name}.desktop
-%{_datadir}/%{name}
+%attr(755,root,root) %{_bindir}/geany
 %attr(755,root,root) %{_libdir}/libgeany.so.*.*.*
 %ghost %attr(755,root,root) %{_libdir}/libgeany.so.0
+%dir %{_libdir}/%{name}
+%{_datadir}/%{name}
+%doc %{_docdir}/%{name}-%{version}
+%{_desktopdir}/%{name}.desktop
 %{_iconsdir}/hicolor/*x*/apps/geany.png
 %{_iconsdir}/hicolor/*x*/actions/geany*.png
 %{_iconsdir}/hicolor/scalable/apps/geany.svg
 %{_iconsdir}/hicolor/scalable/actions/geany*.svg
-
-%{_mandir}/man1/%{name}.1*
-%dir %{_libdir}/%{name}
-%doc %{_docdir}/%{name}-%{version}
+%{_mandir}/man1/geany.1*
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/%{name}
 %attr(755,root,root) %{_libdir}/libgeany.so
-%{_pkgconfigdir}/*.pc
+%{_pkgconfigdir}/geany.pc
 
 %files plugin-classbuilder
 %defattr(644,root,root,755)
