@@ -1,26 +1,26 @@
 Summary:	Fast and lightweight IDE using GTK+
 Summary(pl.UTF-8):	Szybkie i lekkie IDE używające GTK+
 Name:		geany
-Version:	1.38
+Version:	2.0
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	https://download.geany.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	47b7b89d58ed5bbef6ff8d517ed01efd
+# Source0-md5:	97459ee74d9def5cfe6119ce399bed24
 URL:		https://www.geany.org/
 # rst2html
 BuildRequires:	docutils
 BuildRequires:	doxygen
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.32
-BuildRequires:	gtk+3-devel >= 3.22.0
+BuildRequires:	gtk+3-devel >= 3.24.0
 BuildRequires:	intltool
 BuildRequires:	libstdc++-devel >= 6:7
 BuildRequires:	pkgconfig
 BuildRequires:	python3-rst2pdf
 BuildRequires:	which
 Requires:	glib2 >= 1:2.32
-Requires:	gtk+3 >= 3.22.0
+Requires:	gtk+3 >= 3.24.0
 Obsoletes:	geany-plugin-vcdiff < 0.17
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
